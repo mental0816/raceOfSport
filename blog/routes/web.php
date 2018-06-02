@@ -14,9 +14,18 @@
 $setApi = '/api';
 $gym = '/gym';
 $user = '/user';
+$appoint = '/appoint';
 
 
 
 $router->post($setApi . $gym . '/register', ['uses' => 'gymController@create']);
 
 $router->get($setApi . $gym . '/show', ['uses' => 'gymController@showAll']);
+
+$router->post($setApi . $appoint . '/register', ['uses'=>'appointController@create']);
+
+$router->get($setApi . $gym . '/available', ['uses'=>'gymController@availableGym']);
+
+$router->post($setApi . $user . '/login', ['uses'=>'userController@login']);
+
+$router->post($setApi . $user . '/register', ['uses' => 'userController@create']);
