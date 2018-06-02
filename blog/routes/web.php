@@ -11,6 +11,12 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$setApi = '/api';
+$gym = '/gym';
+$user = '/user';
+
+
+
+$router->post($setApi . $gym . '/register', ['uses' => 'gymController@create']);
+
+$router->get($setApi . $gym . '/show', ['uses' => 'gymController@showAll']);
